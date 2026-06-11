@@ -1,0 +1,229 @@
+HTML
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <style>
+        /* 변수 및 기본 리셋 */
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #333333;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        /* 네비게이션 바 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 메인 히어로 섹션 */
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* 공통 섹션 스타일 */
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* 소개 및 카드 그리드 스타일 */
+        .about-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* 푸터 */
+        footer {
+            background-color: #1e293b;
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* 반응형 모바일 스타일 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; } /* 심플함을 위해 모바일 메뉴는 숨김 처리 */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">MySpace</a>
+            <ul class="nav-links">
+                <li><a href="#about">Introduce</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>안녕하세요, 반갑습니다!</h1>
+        <p>데이터와 효율적인 시스템 구축에 관심을 두고 학습하며 성장 중인 공간입니다. 방문해 주셔서 감사합니다.</p>
+    </section>
+
+    <hr style="border: 0; height: 1px; background: #e2e8f0; max-width: 1100px; margin: 0 auto;">
+
+    <section id="about" class="section">
+        <h2 class="section-title">소개 (About Me)</h2>
+        <div class="about-text">
+            <p>
+                문제를 분석하고 데이터 속에서 인사이트를 찾아내는 과정을 즐깁니다.<br>
+                현재 생산 효율성 향상, 프로세스 최적화, 그리고 이를 뒷받침하는 데이터 분석(Python/Pandas 등) 기술을 꾸준히 공부하고 있습니다. 
+                더 나은 자동화 시스템과 효율적인 관리 프로세스를 만드는 것이 목표입니다.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects" class="section" style="background-color: #f1f5f9; max-width: 100%; padding-left: 0; padding-right: 0;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 0 2rem;">
+            <h2 class="section-title">주요 관심 및 활동 (Interests)</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>생산 & 공정 최적화</h3>
+                    <p>제조 및 생산 현장의 고질적인 병목(Bottleneck) 문제를 찾아내고, 데이터 기반의 최적화 모델을 통해 리드타임을 단축하는 연구에 관심이 많습니다.</p>
+                </div>
+                <div class="card">
+                    <h3>데이터 분석 (Data Analysis)</h3>
+                    <p>Python과 Pandas 라이브러리를 활용하여 원시 데이터를 정제하고 가공합니다. 복잡한 수치 속에서 유의미한 통계적 경향성을 도출하는 연습을 하고 있습니다.</p>
+                </div>
+                <div class="card">
+                    <h3>시스템 설계 (MES/SCM)</h3>
+                    <p>현장의 흐름을 추적하는 LOT 추적 로직, 재공재고 관리, 그리고 전체 공급망(SCM) 관점에서의 효율적인 시스템 프로세스 설계에 흥미가 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">문의 (Contact)</h2>
+        <div class="about-text">
+            <p>협업 제안이나 궁금한 점이 있으시다면 언제든 아래의 이메일로 연락해 주세요.</p>
+            <p style="margin-top: 1rem; font-weight: bold; color: var(--primary-color);">Email: your-email@example.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MySpace. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
